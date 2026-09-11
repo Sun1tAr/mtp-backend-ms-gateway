@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mtp-backend-ms-gateway
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+logging:
+  charset:
+    console: UTF-8
+    file: UTF-8
+  level:
+    b4e.ru.mtp.backend: ${LOGGING_LEVEL:debug}
+
+ms:
+  proxy-path:
+    category-service-uri: ${CATEGORY_SERVICE_URI:http://localhost:8081}
+    account-service-uri: ${ACCOUNT_SERVICE_URI:http://localhost:8082}
+    user-service-uri: ${ACCOUNT_SERVICE_URI:http://localhost:8083}
+    transaction-service-uri: ${TRANSACTION_SERVICE_URI:http://localhost:8084}
+  security:
+    autologin-when-registered: ${SECURITY_AUTO_LOGIN:true}
+    jwt:
+      secret: ${JWT_SECRET:hGIBRYW9yzZyg8fpcqcn7HRrOHMmCxQ8y5R77NOZ5R4}
+      access-lifetime: ${JWT_ACCESS_LIFETIME:1d}
+  feign-clients:
+    users-client:
+      url: ${ACCOUNT_SERVICE_URI:http://localhost:8083}
+      connect-timeout: 3000
+      read-timeout: 6000
+      logger-level: FULL
+
