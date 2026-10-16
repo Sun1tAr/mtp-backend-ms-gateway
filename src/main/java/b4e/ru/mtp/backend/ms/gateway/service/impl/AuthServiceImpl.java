@@ -1,12 +1,12 @@
 package b4e.ru.mtp.backend.ms.gateway.service.impl;
 
-import b4e.ru.mtp.backend.commons.dto.auth.LoginUserRequest;
-import b4e.ru.mtp.backend.commons.dto.auth.LoginUserResponse;
-import b4e.ru.mtp.backend.commons.dto.auth.RegisterUserRequest;
-import b4e.ru.mtp.backend.commons.dto.auth.RegisterUserResponse;
-import b4e.ru.mtp.backend.commons.exception.MtpErrorCode;
-import b4e.ru.mtp.backend.commons.exception.MtpException;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.LoginUserRequest;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.LoginUserResponse;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.RegisterUserRequest;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.RegisterUserResponse;
 import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpErrorCode;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpException;
 import b4e.ru.mtp.backend.ms.gateway.service.AuthService;
 import b4e.ru.mtp.backend.ms.gateway.service.JwtService;
 import b4e.ru.mtp.backend.ms.gateway.service.UserService;

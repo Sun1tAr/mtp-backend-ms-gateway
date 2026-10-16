@@ -1,12 +1,11 @@
 package b4e.ru.mtp.backend.ms.gateway.controller;
 
 
-import b4e.ru.mtp.backend.commons.dto.auth.LoginUserRequest;
-import b4e.ru.mtp.backend.commons.dto.auth.LoginUserResponse;
-import b4e.ru.mtp.backend.commons.dto.auth.RegisterUserRequest;
-import b4e.ru.mtp.backend.commons.dto.auth.RegisterUserResponse;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.LoginUserRequest;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.LoginUserResponse;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.RegisterUserRequest;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.RegisterUserResponse;
 import b4e.ru.mtp.backend.ms.gateway.service.AuthService;
-import b4e.ru.mtp.backend.ms.gateway.service.impl.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

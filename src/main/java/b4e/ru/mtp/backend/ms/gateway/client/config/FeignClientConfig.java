@@ -1,8 +1,8 @@
 package b4e.ru.mtp.backend.ms.gateway.client.config;
 
-import b4e.ru.mtp.backend.commons.dto.common.ErrorDtoResponse;
-import b4e.ru.mtp.backend.commons.exception.MtpErrorCode;
-import b4e.ru.mtp.backend.commons.exception.MtpException;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.ErrorDtoResponse;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpErrorCode;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpException;
 import feign.Client;
 import feign.Logger;
 import feign.Request;

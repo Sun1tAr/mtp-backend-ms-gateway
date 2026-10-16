@@ -1,22 +1,18 @@
 package b4e.ru.mtp.backend.ms.gateway.filter;
 
-import b4e.ru.mtp.backend.commons.api.MtpHttpHeaders;
-import b4e.ru.mtp.backend.commons.dto.common.ErrorDtoResponse;
-import b4e.ru.mtp.backend.commons.exception.MtpErrorCode;
-import b4e.ru.mtp.backend.commons.service.RequestContextService;
+import b4e.ru.mtp.backend.ms.gateway.api.MtpHttpHeaders;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.ErrorDtoResponse;
 import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpErrorCode;
 import b4e.ru.mtp.backend.ms.gateway.service.AuthService;
 import b4e.ru.mtp.backend.ms.gateway.service.JwtService;
-import b4e.ru.mtp.backend.ms.gateway.service.impl.AuthServiceImpl;
-import b4e.ru.mtp.backend.ms.gateway.service.impl.JwtServiceImpl;
+import b4e.ru.mtp.backend.ms.gateway.service.RequestContextService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletRequestWrapper;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.connector.RequestFacade;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

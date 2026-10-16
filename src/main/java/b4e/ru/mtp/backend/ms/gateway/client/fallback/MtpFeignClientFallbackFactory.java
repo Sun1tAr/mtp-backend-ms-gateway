@@ -1,8 +1,8 @@
 package b4e.ru.mtp.backend.ms.gateway.client.fallback;
 
-import b4e.ru.mtp.backend.commons.api.MtpHttpHeaders;
-import b4e.ru.mtp.backend.commons.exception.MtpErrorCode;
-import b4e.ru.mtp.backend.commons.exception.MtpException;
+import b4e.ru.mtp.backend.ms.gateway.api.MtpHttpHeaders;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpErrorCode;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpException;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.openfeign.FallbackFactory;

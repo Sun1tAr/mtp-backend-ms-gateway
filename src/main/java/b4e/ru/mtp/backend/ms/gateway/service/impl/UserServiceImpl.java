@@ -1,13 +1,13 @@
 package b4e.ru.mtp.backend.ms.gateway.service.impl;
 
-import b4e.ru.mtp.backend.commons.api.MtpHttpHeaders;
-import b4e.ru.mtp.backend.commons.dto.user.CreateUserRequest;
-import b4e.ru.mtp.backend.commons.dto.user.CreateUserResponse;
-import b4e.ru.mtp.backend.commons.dto.user.GetUserResponse;
-import b4e.ru.mtp.backend.commons.exception.MtpErrorCode;
-import b4e.ru.mtp.backend.commons.exception.MtpException;
+import b4e.ru.mtp.backend.ms.gateway.api.MtpHttpHeaders;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.CreateUserRequest;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.CreateUserResponse;
+import b4e.ru.mtp.backend.ms.gateway.api.dto.GetUserResponse;
 import b4e.ru.mtp.backend.ms.gateway.client.UsersClient;
 import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpErrorCode;
+import b4e.ru.mtp.backend.ms.gateway.exception.MtpException;
 import b4e.ru.mtp.backend.ms.gateway.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -74,7 +74,6 @@ public class UserServiceImpl implements UserService {
 
     private void validateResponse(ResponseEntity<?> response) {
         if (response.getStatusCode().is2xxSuccessful()) {
-            return;
         } else if (response.getHeaders().get(MtpHttpHeaders.ERROR_CODE).isEmpty()) {
             throw new MtpException(MtpErrorCode.CLIENT_ERROR);
         } else {

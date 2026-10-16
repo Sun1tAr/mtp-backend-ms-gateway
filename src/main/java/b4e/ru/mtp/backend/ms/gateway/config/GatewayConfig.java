@@ -1,11 +1,8 @@
 package b4e.ru.mtp.backend.ms.gateway.config;
 
-import b4e.ru.mtp.backend.commons.api.MtpHttpHeaders;
-import b4e.ru.mtp.backend.commons.exception.MtpException;
-import b4e.ru.mtp.backend.commons.filter.MDCConstants;
-import b4e.ru.mtp.backend.commons.service.RequestContextService;
+import b4e.ru.mtp.backend.ms.gateway.api.MtpHttpHeaders;
+import b4e.ru.mtp.backend.ms.gateway.service.RequestContextService;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,12 +12,6 @@ import org.springframework.web.servlet.function.RouterFunction;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
-import java.security.Principal;
-import java.util.List;
-import java.util.Optional;
-
-import static org.springframework.cloud.gateway.server.mvc.filter.BeforeFilterFunctions.addRequestHeader;
-import static org.springframework.cloud.gateway.server.mvc.filter.BeforeFilterFunctions.addRequestHeadersIfNotPresent;
 import static org.springframework.cloud.gateway.server.mvc.filter.BeforeFilterFunctions.uri;
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
 import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
