@@ -1,6 +1,6 @@
 package b4e.ru.mtp.backend.ms.gateway.service;
 
-import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.domain.UserCredentials;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {

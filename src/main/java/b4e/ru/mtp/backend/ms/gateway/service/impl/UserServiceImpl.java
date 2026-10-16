@@ -5,7 +5,7 @@ import b4e.ru.mtp.backend.ms.gateway.api.dto.CreateUserRequest;
 import b4e.ru.mtp.backend.ms.gateway.api.dto.CreateUserResponse;
 import b4e.ru.mtp.backend.ms.gateway.api.dto.GetUserResponse;
 import b4e.ru.mtp.backend.ms.gateway.client.UsersClient;
-import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.domain.UserCredentials;
 import b4e.ru.mtp.backend.ms.gateway.exception.MtpErrorCode;
 import b4e.ru.mtp.backend.ms.gateway.exception.MtpException;
 import b4e.ru.mtp.backend.ms.gateway.service.UserService;
@@ -73,8 +73,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private void validateResponse(ResponseEntity<?> response) {
-        if (response.getStatusCode().is2xxSuccessful()) {//fixme
-        } else if (response.getHeaders().get(MtpHttpHeaders.ERROR_CODE).isEmpty()) {
+        if (response.getHeaders().get(MtpHttpHeaders.ERROR_CODE).isEmpty()) {
             throw new MtpException(MtpErrorCode.CLIENT_ERROR);
         } else {
             List<String> errorCode = response.getHeaders().get(MtpHttpHeaders.ERROR_CODE);

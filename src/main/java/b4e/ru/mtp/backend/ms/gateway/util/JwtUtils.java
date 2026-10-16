@@ -1,7 +1,7 @@
 package b4e.ru.mtp.backend.ms.gateway.util;
 
 import b4e.ru.mtp.backend.ms.gateway.constant.JwtClaims;
-import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.domain.UserCredentials;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 

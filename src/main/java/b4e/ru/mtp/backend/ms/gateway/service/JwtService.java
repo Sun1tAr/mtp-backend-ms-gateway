@@ -1,7 +1,7 @@
 package b4e.ru.mtp.backend.ms.gateway.service;
 
-import b4e.ru.mtp.backend.ms.gateway.api.dto.JwtAuthDto;
-import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.client.dto.JwtAuthDto;
+import b4e.ru.mtp.backend.ms.gateway.domain.UserCredentials;
 
 public interface JwtService {
 

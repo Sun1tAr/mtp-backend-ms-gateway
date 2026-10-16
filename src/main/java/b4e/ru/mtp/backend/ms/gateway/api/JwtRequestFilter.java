@@ -1,8 +1,7 @@
-package b4e.ru.mtp.backend.ms.gateway.filter;
+package b4e.ru.mtp.backend.ms.gateway.api;
 
-import b4e.ru.mtp.backend.ms.gateway.api.MtpHttpHeaders;
 import b4e.ru.mtp.backend.ms.gateway.api.dto.ErrorDtoResponse;
-import b4e.ru.mtp.backend.ms.gateway.dto.UserCredentials;
+import b4e.ru.mtp.backend.ms.gateway.domain.UserCredentials;
 import b4e.ru.mtp.backend.ms.gateway.exception.MtpErrorCode;
 import b4e.ru.mtp.backend.ms.gateway.service.AuthService;
 import b4e.ru.mtp.backend.ms.gateway.service.JwtService;

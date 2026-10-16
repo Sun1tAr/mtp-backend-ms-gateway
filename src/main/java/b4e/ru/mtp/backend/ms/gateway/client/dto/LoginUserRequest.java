@@ -1,4 +1,4 @@
-package b4e.ru.mtp.backend.ms.gateway.api.dto;
+package b4e.ru.mtp.backend.ms.gateway.client.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class LoginUserResponse {
+public class LoginUserRequest {
 
-    private JwtAuthDto auth;
+    private String login;
+    private String password;
 
 }

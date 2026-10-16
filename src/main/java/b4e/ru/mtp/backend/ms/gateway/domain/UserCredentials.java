@@ -1,4 +1,4 @@
-package b4e.ru.mtp.backend.ms.gateway.dto;
+package b4e.ru.mtp.backend.ms.gateway.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

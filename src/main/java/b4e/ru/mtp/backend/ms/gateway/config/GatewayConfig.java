@@ -1,7 +1,6 @@
 package b4e.ru.mtp.backend.ms.gateway.config;
 
 import b4e.ru.mtp.backend.ms.gateway.api.MtpHttpHeaders;
-import b4e.ru.mtp.backend.ms.gateway.service.RequestContextService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -31,8 +30,6 @@ public class GatewayConfig {
 
     @Value("${ms.proxy-path.account-service-uri}")
     private String accountServiceUri;
-
-    private final RequestContextService requestContextService;
 
     @Bean
     public RouterFunction<ServerResponse> customRoutes() {
