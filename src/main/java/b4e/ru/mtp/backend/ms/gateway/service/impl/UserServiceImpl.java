@@ -73,12 +73,12 @@ public class UserServiceImpl implements UserService {
     }
 
     private void validateResponse(ResponseEntity<?> response) {
-        if (response.getStatusCode().is2xxSuccessful()) {
+        if (response.getStatusCode().is2xxSuccessful()) {//fixme
         } else if (response.getHeaders().get(MtpHttpHeaders.ERROR_CODE).isEmpty()) {
             throw new MtpException(MtpErrorCode.CLIENT_ERROR);
         } else {
             List<String> errorCode = response.getHeaders().get(MtpHttpHeaders.ERROR_CODE);
-            MtpErrorCode mtpErrorCode = MtpErrorCode.valueOf(errorCode.get(0));
+            MtpErrorCode mtpErrorCode = MtpErrorCode.valueOf(errorCode.getFirst());
             throw new MtpException(mtpErrorCode);
         }
     }
