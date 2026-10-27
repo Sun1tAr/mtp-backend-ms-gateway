@@ -23,13 +23,13 @@ public class JwtServiceImpl implements JwtService {
     private Duration jwtLifetime;
 
     @Override
-    public JwtAuthDto createJwtResponse(UserCredentials credentials) {
+    public JwtAuthDto createJwtResponse(UserCredentials credentials) {//fixme test
         String accessToken = getJwtForUser(credentials);
         return new JwtAuthDto(accessToken);
     }
 
     @Override
-    public boolean tokenIsValid(String token) {
+    public boolean tokenIsValid(String token) {//fixme test
         try {
             getIdFromJwt(token);
             return true;
@@ -39,8 +39,8 @@ public class JwtServiceImpl implements JwtService {
     }
 
 
-//    @Override
-    public String getIdFromJwt(String token) {
+    @Override
+    public String getIdFromJwt(String token) {//fixme test
         return JwtUtils.getDataFromToken(JwtClaims.USER_ID, token, secretKey);
     }
 

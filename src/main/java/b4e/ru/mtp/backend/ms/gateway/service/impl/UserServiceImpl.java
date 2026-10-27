@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     private final UsersClient usersClient;
 
     @Override
-    public UserCredentials createUser(UserCredentials userCredentials) {
+    public UserCredentials createUser(UserCredentials userCredentials) {//fixme test
         CreateUserRequest request = new CreateUserRequest();
         request.setLogin(userCredentials.getLogin());
         request.setPasswordHash(userCredentials.getPassword());
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserCredentials findUserByLogin(String login) {
+    public UserCredentials findUserByLogin(String login) {//fixme test
         ResponseEntity<?> response = usersClient.getUserByLogin(login);
         validateResponse(response);
         GetUserResponse responseBody = (GetUserResponse) response.getBody();
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserCredentials findUserById(String id) {
+    public UserCredentials findUserById(String id) {//fixme test
         ResponseEntity<?> response = usersClient.getUserById(Long.parseLong(id));
         validateResponse(response);
         GetUserResponse responseBody = (GetUserResponse) response.getBody();
@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
         return findUserByLogin(username);
     }
 
-    private void validateResponse(ResponseEntity<?> response) {
+    private void validateResponse(ResponseEntity<?> response) {//fixme test
         if (response.getHeaders().get(MtpHttpHeaders.ERROR_CODE).isEmpty()) {
             throw new MtpException(MtpErrorCode.CLIENT_ERROR);
         } else {

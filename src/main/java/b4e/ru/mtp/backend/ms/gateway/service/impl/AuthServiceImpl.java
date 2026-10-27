@@ -37,7 +37,7 @@ public class AuthServiceImpl implements AuthService {
     private final UserService userService;
 
     @Override
-    public RegisterUserResponse registerUser(RegisterUserRequest request) {
+    public RegisterUserResponse registerUser(RegisterUserRequest request) {//fixme test
         UserCredentials userCredentials = new UserCredentials();
         userCredentials.setPassword(passwordEncoder.encode(request.getPassword()));
         userCredentials.setLogin(request.getLogin());
@@ -51,7 +51,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public LoginUserResponse loginUser(LoginUserRequest request) {
+    public LoginUserResponse loginUser(LoginUserRequest request) {//fixme test
         UserCredentials user = userService.findUserByLogin(request.getLogin());
         if (authenticateUser(request.getLogin(), request.getPassword())) {
             return new LoginUserResponse(jwtService.createJwtResponse(user));
@@ -60,7 +60,7 @@ public class AuthServiceImpl implements AuthService {
         }
     }
 
-    public Optional<UserCredentials> loadUserById(String id) throws UsernameNotFoundException {
+    public Optional<UserCredentials> loadUserById(String id) throws UsernameNotFoundException {//fixme test
         try {
             UserCredentials user = userService.findUserById(id);
             return Optional.of(user);
